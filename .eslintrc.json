@@ -3,9 +3,13 @@
   "plugins": ["googleappsscript"],
   "parserOptions": {},
   "env": {
+    "es6": true,
     "googleappsscript/googleappsscript": true
   },
-  "globals": {},
+  "globals": {
+    "Notion": false,
+    "Client": false
+  },
   "rules": {
     "semi": "warn",
     "quotes": ["warn", "single"],
