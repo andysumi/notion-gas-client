@@ -1,0 +1,24 @@
+{
+  "name": "notion-gas-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src --config .eslintrc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andysumi/notion-gas-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andysumi/notion-gas-client/issues"
+  },
+  "homepage": "https://github.com/andysumi/notion-gas-client#readme",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-plugin-googleappsscript": "^1.0.3"
+  }
+}
