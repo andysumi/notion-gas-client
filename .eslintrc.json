@@ -7,8 +7,12 @@
     "googleappsscript/googleappsscript": true
   },
   "globals": {
+    // External Libraries
+    "GasTap": false,
+    // Our classes
     "Notion": false,
-    "Client": false
+    "Client": false,
+    "TestCommon": false
   },
   "rules": {
     "semi": "warn",
