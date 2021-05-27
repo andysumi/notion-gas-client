@@ -8,9 +8,7 @@ function testRunner() { // eslint-disable-line no-unused-vars
 
   try {
     /***** Test cases ******************************/
-    // Database
-    testGetDatabases_(test, common);
-    testGetSpecificDatabase_(test, common);
+    testDatabaseMethod_(test, common);
     /***********************************************/
   } catch (error) {
     test('Exception occurred', function f(assert) {
@@ -22,8 +20,8 @@ function testRunner() { // eslint-disable-line no-unused-vars
   test.finish();
 }
 
-function testGetDatabases_(test, common) {
-  test('getDatabases() - 正常系(paramなし)', function (t) {
+function testDatabaseMethod_(test, common) {
+  test('getDatabases() - paramなし', function (t) {
     const result = common.notion.getDatabases();
     t.ok(result instanceof Object, 'Objectで取得できること');
     t.equal(result.object, 'list', 'objectが"list"であること');
@@ -32,7 +30,7 @@ function testGetDatabases_(test, common) {
     t.notOk(result.has_more, 'has_moreが"false"であること');
   });
 
-  test('getDatabases() - 正常系(paramあり)', function (t) {
+  test('getDatabases() - paramあり', function (t) {
     const result = common.notion.getDatabases(1);
     t.ok(result instanceof Object, 'Objectで取得できること');
     t.equal(result.object, 'list', 'objectが"list"であること');
@@ -40,17 +38,8 @@ function testGetDatabases_(test, common) {
     t.ok(result.next_cursor, 'next_cursorが設定されること');
     t.ok(result.has_more, 'has_moreが"false"であること');
   });
-}
 
-function testGetSpecificDatabase_(test, common) {
-  test('getSpecificDatabase() - 異常系', function (t) {
-    t.throws(function () {
-      return common.notion.getSpecificDatabase();
-    },
-    '"databaseId"を指定していない場合はエラー');
-  });
-
-  test('getSpecificDatabase() - 正常系', function (t) {
+  test('getSpecificDatabase()', function (t) {
     const result = common.notion.getSpecificDatabase(common.database.id);
     t.ok(result instanceof Object, 'Objectで取得できること');
     t.equal(result.object, 'database', 'objectが"database"であること');

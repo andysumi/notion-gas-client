@@ -1,6 +1,6 @@
 class Notion { // eslint-disable-line
-  constructor(token, version) {
-    this.client_ = new Client(token, version);
+  constructor(token) {
+    this.client_ = new Client(token);
   }
 
   /**

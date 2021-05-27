@@ -1,12 +1,11 @@
 class Client {  // eslint-disable-line
-  constructor(token, version) {
+  constructor(token) {
     if (!token) throw new Error('"token" must be specified');
-    if (!version) throw new Error('"version" must be specified');
 
     this.baseUrl_ = 'https://api.notion.com/v1';
     this.headers_ = {
       'Authorization': 'Bearer ' + token,
-      'Notion-Version': version,
+      'Notion-Version': '2021-05-13',
     };
   }
 

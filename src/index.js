@@ -1,11 +1,10 @@
 /**
  * インスタンスを作成する
  * @param {string} token
- * @param {string} version
  * @return {NotionClient}
  */
-function create(token, version) { // eslint-disable-line no-unused-vars
-  return new Notion(token, version);
+function create(token) { // eslint-disable-line no-unused-vars
+  return new Notion(token);
 }
 
 /**
